@@ -6,16 +6,16 @@ module.exports = function(app) {
     db.Security.findAll({}).then(function(dbSecurity) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbSecurity
+        Security: dbSecurity
       });
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbSecurity) {
-      res.render("example", {
-        example: dbSecurity
+  // Load Security page and pass in an Security by id
+  app.get("/Security/:id", function(req, res) {
+    db.Security.findOne({ where: { id: req.params.id } }).then(function(dbSecurity) {
+      res.render("Security", {
+        Security: dbSecurity
       });
     });
   });
