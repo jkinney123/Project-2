@@ -1,24 +1,24 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  // Get all Securitys
+  app.get("/api/Security", function(req, res) {
+    db.Security.findAll({}).then(function(dbSecurity) {
+      res.json(dbSecurity);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // Create a new Security
+  app.post("/api/Security", function(req, res) {
+    db.Security.create(req.body).then(function(dbSecurity) {
+      res.json(dbSecurity);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+  // Delete an Security by id
+  app.delete("/api/Security/:id", function(req, res) {
+    db.Security.destroy({ where: { id: req.params.id } }).then(function(dbSecurity) {
+      res.json(dbSecurity);
     });
   });
 };
