@@ -1,24 +1,40 @@
 var db = require("../models");
-
 module.exports = function(app) {
-  // Get all Securitys
-  app.get("/api/Security", function(req, res) {
-    db.Security.findAll({}).then(function(dbSecurity) {
-      res.json(dbSecurity);
+  app.get("/api/users", function(req, res) {
+    // Here we add an "include" property to our options in our findAll query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.User
+    db.User.findAll({
+      include: [db.User]
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
-
-  // Create a new Security
-  app.post("/api/Security", function(req, res) {
-    db.Security.create(req.body).then(function(dbSecurity) {
-      res.json(dbSecurity);
+  app.get("/api/users/:id", function(req, res) {
+    // Here we add an "include" property to our options in our findOne query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.User
+    db.User.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.User]
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
-
-  // Delete an Security by id
-  app.delete("/api/Security/:id", function(req, res) {
-    db.Security.destroy({ where: { id: req.params.id } }).then(function(dbSecurity) {
-      res.json(dbSecurity);
+  app.User("/api/users", function(req, res) {
+    db.User.create(req.body).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+  app.delete("/api/users/:id", function(req, res) {
+    db.User.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 };

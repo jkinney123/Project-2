@@ -13,7 +13,9 @@ module.exports = function(app) {
 
   // Load Security page and pass in an Security by id
   app.get("/Security/:id", function(req, res) {
-    db.Security.findOne({ where: { id: req.params.id } }).then(function(dbSecurity) {
+    db.Security.findOne({ where: { id: req.params.id } }).then(function(
+      dbSecurity
+    ) {
       res.render("Security", {
         Security: dbSecurity
       });

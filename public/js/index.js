@@ -2,7 +2,6 @@
 var deviceName = $("#device");
 var deviceStatus = $("#status");
 var deviceManage = $("#manage");
-var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -12,19 +11,19 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
+      url: "api/Security",
       data: JSON.stringify(example)
     });
   },
   getExamples: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/Security",
       type: "GET"
     });
   },
   deleteExample: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/Security/" + id,
       type: "DELETE"
     });
   }
