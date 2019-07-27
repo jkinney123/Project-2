@@ -35,7 +35,7 @@ var refreshExamples = function() {
   API.getExamples().then(function(data) {
     var $examples = data.map(function(example) {
       var $a = $("<a>")
-        .text(example.text)
+        .text(example.device)
         .attr("href", "/example/" + example.id);
 
       var $li = $("<li>")
@@ -65,11 +65,11 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+    device: $exampleText.val().trim(),
+    status: $exampleDescription.val().trim()
   };
 
-  if (!(example.text && example.description)) {
+  if (!(example.device && example.status)) {
     alert("You must enter an example text and description!");
     return;
   }
