@@ -1,7 +1,7 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
+var deviceName = $("#device");
+var deviceStatus = $("#status");
+var deviceManage = $("#manage");
 var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
@@ -65,8 +65,8 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+    text: deviceName.val().trim(),
+    description: deviceStatus.val().trim()
   };
 
   if (!(example.text && example.description)) {
@@ -78,8 +78,8 @@ var handleFormSubmit = function(event) {
     refreshExamples();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  deviceName.val("");
+  deviceStatus.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -95,5 +95,5 @@ var handleDeleteBtnClick = function() {
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+deviceManage.click(handleFormSubmit);
+$exampleList.click(".delete", handleDeleteBtnClick);

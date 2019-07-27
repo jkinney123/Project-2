@@ -1,3 +1,18 @@
+header {
+  background-color: rgb(92, 92, 238);
+  height: 75px;
+  margin-bottom: 50px;
+}
+.header {
+  float: right;
+  margin-top: 10px;
+}
+.header-text {
+  color: white;
+  font-weight: bold;
+  font-size: 45px;
+  padding-top: 10px;
+}
 .list-group-item {
   line-height: 2.5;
 }
