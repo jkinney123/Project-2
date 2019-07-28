@@ -1,27 +1,36 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page
-  app.get("/", function(req, res) {
-    db.Device.findAll({}).then(function(Device) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: Device
-      });
+  app.get("/", function (req, res) {
+    res.render("welcome", {
+      msg: "Security Application",
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Device.findOne({ where: { id: req.params.id } }).then(function(Device) {
-      res.render("example", {
-        example: Device
-      });
+  // Loading login page
+  app.get("/dashboard", function (req, res) {
+    res.render("dashboard", {
+      msg: "Security Dashboard",
+    });
+  });
+
+  // Loading register page
+  app.get("/users/register", function (req, res) {
+    res.render("register", {
+      msg: "Register",
+    });
+  });
+
+  // Loading login page
+  app.get("/users/login", function (req, res) {
+    res.render("login", {
+      msg: "Login",
     });
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 };
