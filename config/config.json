@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "K!5tcQHvY",
     "database": "deviceDB",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "K!5tcQHvY",
     "database": "deviceDB",
     "host": "localhost",
     "dialect": "mysql",

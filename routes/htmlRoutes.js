@@ -8,24 +8,31 @@ module.exports = function (app) {
     });
   });
 
-  // Loading login page
+  // Load register page
+  app.get("/register", function (req, res) {
+    res.render("register", {
+      msg: "Register",
+    });
+  });
+
+  // Load login page
+  app.get("/login", function (req, res) {
+    res.render("login", {
+      msg: "Login",
+    });
+  });
+
+  // Load user dashboard page
   app.get("/dashboard", function (req, res) {
     res.render("dashboard", {
       msg: "Security Dashboard",
     });
   });
 
-  // Loading register page
-  app.get("/users/register", function (req, res) {
-    res.render("register", {
-      msg: "Register",
-    });
-  });
-
-  // Loading login page
-  app.get("/users/login", function (req, res) {
-    res.render("login", {
-      msg: "Login",
+  // Load admin page
+  app.get("/admin", function (req, res) {
+    res.render("admin", {
+      msg: "Admin Dashboard",
     });
   });
 

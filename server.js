@@ -1,5 +1,6 @@
 const express = require("express");
-var exphbs = require("express-handlebars");
+const exphbs = require("express-handlebars");
+
 
 var db = require("./models");
 
@@ -21,7 +22,8 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/apiRoutes")(app);
+require("./routes/userRoutes")(app);
+require("./routes/deviceRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };
