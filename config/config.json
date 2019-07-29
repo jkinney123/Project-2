@@ -1,21 +1,41 @@
 {
+
   "development": {
-    "username": "qnvqnokzvwstmwaw",
-    "password": "tpinddu7s0f5pzd7 ",
-    "database": "ezluhhqg5d6rasa7",
-    "host": "yhrz9vns005e0734.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql"
-  },
-  "test": {
+
     "username": "root",
-    "password": null,
+
+    "password": "",
+
     "database": "deviceDB",
+
     "host": "localhost",
-    "dialect": "mysql",
-    "logging": false
-  },
-  "production": {
-    "use_env_variable": "JAWSDB_URL",
+
     "dialect": "mysql"
+
+  },
+
+  "test": {
+
+    "username": "root",
+
+    "password": null,
+
+    "database": "deviceDB",
+
+    "host": "localhost",
+
+    "dialect": "mysql",
+
+    "logging": false
+
+  },
+
+  "production": {
+
+    "use_env_variable": "JAWSDB_URL",
+
+    "dialect": "mysql"
+
   }
+
 }
