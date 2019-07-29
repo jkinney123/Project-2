@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "",
-    "database": "deviceDB",
-    "host": "localhost",
+    "username": "qnvqnokzvwstmwaw",
+    "password": "tpinddu7s0f5pzd7 ",
+    "database": "ezluhhqg5d6rasa7",
+    "host": "yhrz9vns005e0734.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
