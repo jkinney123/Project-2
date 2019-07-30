@@ -1,24 +1,28 @@
 var db = require("../models");
 
+
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  // Get all devices
+  app.get("/api/devices", function(req, res) {
+    db.Device.findAll({}).then(function(dbDevices) {
+      res.json(dbDevices);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  
+  // Create a new device
+  app.post("/api/devices", function(req, res) {
+    console.log(req.body);
+    db.Device.create(req.body).then(function(dbDevice) {
+      res.json(dbDevice);
     });
+    // res.json({Tire: 4, seat : "leather"})
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+  // Delete an device by id
+  app.delete("/api/devices/:id", function(req, res) {
+    db.Device.destroy({ where: { id: req.params.id } }).then(function(dbDevice) {
+      res.json(dbDevice);
     });
   });
 };
