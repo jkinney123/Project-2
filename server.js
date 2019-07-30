@@ -1,7 +1,6 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 
-
 var db = require("./models");
 
 const app = express();
@@ -13,12 +12,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
+app.engine("handlebars", exphbs({ defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 // Routes
@@ -34,7 +28,7 @@ if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
-// Starting the server, syncing our models ------------------------------------/
+// Starting the server, syncing our models
 db.sequelize.sync(syncOptions).then(function() {
   app.listen(PORT, function() {
     console.log(`Server started on port ${PORT}`);

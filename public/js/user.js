@@ -67,12 +67,6 @@ var addUser = function (event) {
     password2: $("#confirm-password").val().trim(),
   };
 
-  // Check if all feilds are filled out
-  if (!(user.name && user.email && user.password && user.password2)) {
-    alert("You must enter all the fields!");
-    return;
-  }
-
   userAPI.saveUser(user).then(function () {
     showUsers();
   });
@@ -100,5 +94,3 @@ var deleteUser = function () {
 $("#show-users").on("click", showUsers);
 $("#userSubmit").on("click", addUser);
 $("#user-list").on("click", ".delete", deleteUser);
-
-

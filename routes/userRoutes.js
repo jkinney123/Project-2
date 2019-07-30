@@ -9,7 +9,7 @@ module.exports = function(app) {
   });
 
   // Create a new user
-  app.post("/api/users", function(req, res) {
+  app.post("/register", function(req, res) {
     db.User.create(req.body).then(function(User) {
       res.json(User);
     });
