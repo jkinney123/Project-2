@@ -5,10 +5,10 @@
   <div class="row">
     <div class="col-md-6">
       <button type="button" id="show-devices" class="btn btn-primary btn-lg btn-block"> Show Active Devices </button>
-      <ul id="example-list" class="list-group">
-        {{#each random}}
+      <ul id="device-list" class="list-group">
+        {{#each devices}}
         <li data-id="{{this.id}}" class="list-group-item">
-          <a href="example/{{this.id}}">{{this.device}}</a>
+          <a href="device/{{this.id}}">{{this.device}}</a>
           <button class="btn btn-danger float-right delete">ｘ</button>
         </li>
         {{/each}}
@@ -19,19 +19,25 @@
       <br>
       <form class="clearfix mb-4" action="POST">
         <div class="form-group">
-          <label for="example-text">Device Name</label>
-          <input type="text" id="example-text" class="form-control" aria-describedby="example-text"
+          <label for="device-text">Device Name</label>
+          <input
+            type="text"
+            id="device-text" 
+            class="form-control" 
             placeholder="Enter Device Name">
         </div>
         <div class="form-group">
-          <label for="example-description">Device Status</label>
-          <input type="text" id="example-description" class="form-control" aria-describedby="example-description"
-            placeholder="True or False">
+          <label for="device-description">Device Status</label>
+          <input 
+            type="text" 
+            id="device-description" 
+            class="form-control" 
+            placeholder="True or false ">
         </div>
-        <button id="submit" class="btn btn-primary float-left">Submit</button>
+        <button id="deviceSubmit" class="btn btn-primary float-left">Submit</button>
       </form>
     </div>
   </div>
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+<script src="/js/device.js"></script>

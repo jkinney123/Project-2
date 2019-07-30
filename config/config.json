@@ -17,9 +17,9 @@
   "test": {
 
     "username": "root",
-
-    "password": null,
-
+   
+    "password": "",
+    
     "database": "deviceDB",
 
     "host": "localhost",
