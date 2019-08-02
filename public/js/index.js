@@ -1,10 +1,10 @@
 // Get references to page elements
 var $deviceName = $("#device-name");
 var $deviceDescription = $("#device-description");
-var $submitBtn = $("#submit");
+var $submitBtn = $("#deviceSubmit");
 var $deviceList = $("#device-list");
 var $deviceStatus = $("#device-status");
-
+console.log('index.js included in this file');
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveDevice: function(device) {

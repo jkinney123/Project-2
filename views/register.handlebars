@@ -1,6 +1,5 @@
-<div id="home">  
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a href="/" class="navbar-brand">HSS</a>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a href="/views/layouts/main.handlebars" class="navbar-brand">HSS</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,17 +30,53 @@
         </div>
     </div>
   </nav>
-  <div class="container">
-    <div class="row">
-        <div class="col-6 offset-2">
-            <img src="/img/smart-locks.jpg" alt="Smart Lock">
+
+
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">
+        <i class="fas fa-user-plus"></i> {{msg}}
+      </h1>
+      <form class="clearfix mb-4" action="POST">
+        <div class="form-group">
+          <label for="user-name">Name</label>
+          <input
+            type="text"
+            id="user-name" 
+            class="form-control" 
+            placeholder="Enter Your Name">
         </div>
-        <div class="col-6 offset-2">
-            <img src="/img/touch-screen-alarm.jpg" alt="Touch Screen Alarm System">
+        <div class="form-group">
+          <label for="user-email">Email</label>
+          <input 
+            type="text" 
+            id="user-email" 
+            class="form-control" 
+            placeholder="Enter Your Email">
         </div>
+        <div class="form-group">
+          <label for="user-password">Password</label>
+          <input 
+            type="text" 
+            id="user-password" 
+            class="form-control" 
+            placeholder="Enter User Password">
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input 
+            type="text" 
+            id="confirm-password" 
+            class="form-control" 
+            placeholder="Confirm Password">
+        </div>
+        
+        <button id="userSubmit" class="btn btn-primary float-left">Register</button>
+      </form>
+      <p class="lead mt-4">Have An Account? <a href="/login">Login</a></p>
     </div>
   </div>
 </div>
-
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+<script src="/js/user.js"></script>

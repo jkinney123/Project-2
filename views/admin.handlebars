@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a href="/" class="navbar-brand">HSS</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a href="/" class="nav-item nav-link active">Home</a>
+            <a href="dashboard" class="nav-item nav-link">Device Dashboard</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Users</a>
+                <div class="dropdown-menu">
+                  <a href="/register" class="dropdown-item">Register</a>
+                  <a href="/login" class="dropdown-item">Login</a>
+                  <a href="/dashboard" class="dropdown-item">Help</a>
+                </div>
+            </div>
+        </div>
+        <form class="form-inline">
+            <div class="input-group">                    
+                <input type="text" class="form-control" placeholder="Search for Devices">
+                <div class="input-group-append">
+                  <button type="button" class="btn btn-secondary"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+        <div class="navbar-nav">
+          <a href="/admin" class="nav-item nav-link">Admin Login</a>
+        </div>
+    </div>
+  </nav>
+
+
+<div class="container">
+  <div class="jumbotron text-center">
+      <h1><i class="fas fa-user-shield fa-3x"></i>  {{msg}}</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <button type="button" id="show-users" class="btn btn-primary btn-lg btn-block"> Show Registered Users </button>
+      <ul id="user-list" class="list-group">
+        {{#each user}}
+        <li data-id="{{this.id}}" class="list-group-item">
+          <a href="user/{{this.id}}">{{this.device}}</a>
+          <button class="btn btn-danger float-right delete">ｘ</button>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <button type="button" class="btn btn-primary btn-lg btn-block">Add a User!</button>
+      <br>
+      <form class="clearfix mb-4" action="POST">
+        <div class="form-group">
+          <label for="user-name">Name</label>
+          <input
+            type="text"
+            id="user-name" 
+            class="form-control" 
+            placeholder="Enter Your Name">
+        </div>
+        <div class="form-group">
+          <label for="user-email">Email</label>
+          <input 
+            type="text" 
+            id="user-email" 
+            class="form-control" 
+            placeholder="Enter Your Email">
+        </div>
+        <div class="form-group">
+          <label for="user-password">Password</label>
+          <input 
+            type="text" 
+            id="user-password" 
+            class="form-control" 
+            placeholder="Enter User Password">
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input 
+            type="text" 
+            id="confirm-password" 
+            class="form-control" 
+            placeholder="Confirm Password">
+        </div>
+        <button id="userSubmit" class="btn btn-primary float-left">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/user.js"></script>

@@ -1,21 +1,41 @@
 {
+
   "development": {
+
     "username": "root",
+
     "password": "Andover@iee62",
-    "database": "devicedb",
+
+    "database": "deviceDB",
+
     "host": "localhost",
+
     "dialect": "mysql"
+
   },
+
   "test": {
+
     "username": "root",
-    "password": "Andover@iee62",
-    "database": "testdb",
+   
+    "password": "",
+    
+    "database": "deviceDB",
+
     "host": "localhost",
+
     "dialect": "mysql",
+
     "logging": false
+
   },
+
   "production": {
+
     "use_env_variable": "JAWSDB_URL",
+
     "dialect": "mysql"
+
   }
+
 }

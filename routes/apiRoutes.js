@@ -1,6 +1,5 @@
 var db = require("../models");
 
-
 module.exports = function(app) {
   // Get all devices
   app.get("/api/devices", function(req, res) {
@@ -9,17 +8,15 @@ module.exports = function(app) {
     });
   });
 
-  
   // Create a new device
   app.post("/api/devices", function(req, res) {
     console.log(req.body);
     db.Device.create(req.body).then(function(dbDevice) {
       res.json(dbDevice);
     });
-    // res.json({Tire: 4, seat : "leather"})
   });
 
-  // Delete an device by id
+  // Delete a device by id
   app.delete("/api/devices/:id", function(req, res) {
     db.Device.destroy({ where: { id: req.params.id } }).then(function(dbDevice) {
       res.json(dbDevice);
