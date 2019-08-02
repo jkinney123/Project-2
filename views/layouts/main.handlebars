@@ -5,20 +5,57 @@
   <meta charset="utf-8">
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">  
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <title>Home Security Systems | Wireless Home Security | Burglar Alarms</title>
 </head>
 
-<body>  
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a href="/" class="navbar-brand">HSS</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a href="/" class="nav-item nav-link active">Home</a>
+            <a href="/dashboard" class="nav-item nav-link">Device Dashboard</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Users</a>
+                <div class="dropdown-menu">
+                  <a href="/register" class="dropdown-item">Register</a>
+                  <a href="/login" class="dropdown-item">Login</a>
+                  <a href="/welcome" class="dropdown-item">Help</a>
+                </div>
+            </div>
+        </div>
+        <form class="form-inline">
+            <div class="input-group">                    
+                <input type="text" class="form-control" placeholder="Search for Devices">                
+                <div class="input-group-append">
+                  {{!-- <button type="button" class="btn btn-secondary"><i class="fa fa-search"></i></button> --}}
+                  <a href="https://www.google.com/" class="btn btn-secondary btn-block" target="_blank">Search</a>
+                </div>
+            </div>
+        </form>
+        <div class="navbar-nav">
+          <a href="/admin" class="nav-item nav-link">Admin Login</a>
+        </div>
+    </div>
+  </nav>
+
   {{{body}}}
 </body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+
 
 </html>

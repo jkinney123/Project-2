@@ -4,7 +4,9 @@ var $deviceDescription = $("#device-description");
 var $submitBtn = $("#deviceSubmit");
 var $deviceList = $("#device-list");
 var $deviceStatus = $("#device-status");
-console.log('index.js included in this file');
+var $deviceShow = $("#show-devices");
+var $toggleSwitch = $("device-control");
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveDevice: function(device) {
@@ -14,6 +16,17 @@ var API = {
       },
       type: "POST",
       url: "api/devices",
+      data: JSON.stringify(device)
+    });
+  },
+
+  updateDevice: function(device, id) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "PUT",
+      url: "api/devices" + id,
       data: JSON.stringify(device)
     });
   },
@@ -96,8 +109,25 @@ var handleDeleteBtnClick = function() {
   });
 };
 
+var deviceControl = function() {
+  console.log(
+    "This is toggle:  " + document.getElementById("device-control").checked
+  );
+};
+
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $deviceList.on("click", ".delete", handleDeleteBtnClick);
+$toggleSwitch.on("click", deviceControl);
 
-$("#toggle-demo").bootstrapToggle("toggle");
+refreshDevices();
+
+// $("#toggle-demo").bootstrapToggle("toggle");
+
+// var test = function() {
+//   console.log(
+//     "This is toggle:  " + document.getElementById("toggle-demo").checked
+//   )
+// }
+
+// $("#toggle-group").on('click', test);

@@ -29,6 +29,15 @@ module.exports = function(app) {
     });
   });
 
+  // Load user page and pass in a user by id
+  app.get("/user/:id", function(req, res) {
+    db.User.findOne({ where: { id: req.params.id } }).then(function(dbUser) {
+      res.render("user", {
+        user: dbUser
+      });
+    });
+  });
+  
   //Load help Page
 
   app.get("/welcome", function(req, res) {

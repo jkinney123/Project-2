@@ -1,46 +1,10 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a href="/" class="navbar-brand">HSS</a>
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-        <div class="navbar-nav">
-            <a href="/" class="nav-item nav-link active">Home</a>
-            <a href="/dashboard" class="nav-item nav-link">Device Dashboard</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Users</a>
-                <div class="dropdown-menu">
-                  <a href="/register" class="dropdown-item">Register</a>
-                  <a href="/login" class="dropdown-item">Login</a>
-                  <a href="/welcome" class="dropdown-item">Help</a>
-                </div>
-            </div>
-        </div>
-        <form class="form-inline">
-            <div class="input-group">                    
-                <input type="text" class="form-control" placeholder="Search for Devices">
-                <div class="input-group-append">
-                  <button type="button" class="btn btn-secondary"><i class="fa fa-search"></i></button>
-                </div>
-            </div>
-        </form>
-        <div class="navbar-nav">
-          <a href="/admin" class="nav-item nav-link">Admin Login</a>
-        </div>
-    </div>
-  </nav>
-
-
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
     <div class="card card-body text-center">
-      <h1><i class="fas fa-user-shield fa-3x"></i>  {{msg}}</h1>
-      <p>Create an account or login</p>
-      <a href="/register" class="btn btn-primary btn-block mb-2"
-        >Register</a
-      >
-      <a href="/login" class="btn btn-secondary btn-block">Login</a>
+      <h1><i class="fas fa-user-shield fa-4x"></i>  {{msg}}</h1>
+      <p>Click Topic or Search for Help</p>
+      <a href="https://www.google.com/" class="btn btn-primary btn-block mb-2" target="_blank">Topic</a>
+      <a href="https://www.google.com/" class="btn btn-secondary btn-block" target="_blank">Search</a>
     </div>
   </div>
 </div>

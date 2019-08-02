@@ -4,16 +4,11 @@
       <div class="card mt-4">
         <div class="card-body">
           <h5 class="card-title">Device</h5>
-          <p>
-            <strong>ID</strong>: {{device.id}}</p>
-          <p>
+          
           <p>
             <strong>Device Name:</strong>: {{device.name}}</p>
           <p>
             <strong>Description:</strong> {{device.description}}</p>
-          <p>
-            <strong>Device State:</strong> {{device.status}}</p>
-            <a href="/">← Back To Home</a>
         </div>
       </div>
     </div>
@@ -24,11 +19,44 @@
     <div class="col-8 offset-2">
       <div class="card mt-4">
         <div class="card-body">
-          <h5 class="card-title">Device</h5>
-          <p>
-            {{device.name}} -- <input style="border: black" id="toggle-demo" type="checkbox" data-toggle="toggle">
+          <h5 class="card-title">Device Control</h5>
+          <p> {{device.name}} || <input id="device-control" type="checkbox" unchecked data-toggle="toggle"></p>
+          <button type="button" class="btn btn-primary btn-lg btn-block">Schedule Device</button>
+          <br>
+          <form class="clearfix mb-4">
+            <div class="form-group">
+              <label for="device-date">Date</label>
+              <input type="date" id="schedule-date" class="form-control" aria-describedby="schedule-date" placeholder="YYYY-MM-DD">
+            </div>
+            <div class="form-group">
+              <label for="device-time">Time</label>
+              <input type="time" id="schedule-time" class="form-control" aria-describedby="schedule-time" placeholder="hh:mm:ss">
+            </div>
+            <button id="scheduleSubmit" class="btn btn-primary float-left">Submit</button>
+          </form>
         </div>
       </div>
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Device Log</h5>
+          
+          <p>
+            <strong>Date Created:</strong> {{device.createdAt}}</p>
+          <p>
+            <strong>Device State:</strong> {{device.status}}</p>          
+          <p id="device-state"></p>
+
+            <strong>Device State:</strong><p id="device-state"></p>
+          </p>            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

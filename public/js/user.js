@@ -26,7 +26,7 @@ var userAPI = {
     });
   },
 
-  removeUser: function (id) {
+  removeUser: function(id) {
     return $.ajax({
       url: "api/users/" + id,
       type: "DELETE"
@@ -34,7 +34,7 @@ var userAPI = {
   }
 };
 
-// showUsers gets new devices from the db and repopulates the list
+// showUsers gets new users from the db and repopulates the list
 var showUsers = function() {
   userAPI.getUser().then(function(data) {
     var $users = data.map(function(user) {
@@ -101,7 +101,6 @@ var deleteUser = function() {
 };
 
 // Add event listeners to the submit and delete buttons
-
 
 $showUsers.on("click", showUsers);
 $userSubmitBtn.on("click", addUser);

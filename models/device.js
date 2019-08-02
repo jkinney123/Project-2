@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Device = sequelize.define("Device", {
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     description: {
