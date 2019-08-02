@@ -9,13 +9,13 @@ module.exports = function(app) {
   });
 
   // Create a new user
-  app.post("/register", function(req, res) {
+  app.post("/api/users", function(req, res) {
     db.User.create(req.body).then(function(User) {
       res.json(User);
     });
   });
 
-  // Delete an device by id
+  // Delete a user by id
   app.delete("/api/users/:id", function(req, res) {
     db.User.destroy({ where: { id: req.params.id } }).then(function(User) {
       res.json(User);

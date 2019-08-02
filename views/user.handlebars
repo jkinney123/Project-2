@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">User</h5>
+          <p>
+            {{user.name}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Account Info</h5>
+          
+          <p>
+            <strong>User Name:</strong>: {{user.name}}</p>
+          <p>
+            <strong>Email:</strong> {{user.email}}</p>
+          <p>
+            <strong>User Status:</strong> {{user.status}}</p>
+          <p>
+            <strong>Member Since:</strong> {{user.createdAt}}</p>
+          
+            <strong>Last Log in on:</strong><p id="last-login"></p>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var lastLogin = new Date();
+  document.getElementById("last-login").innerHTML = lastLogin;
+</script>

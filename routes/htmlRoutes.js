@@ -1,34 +1,72 @@
 module.exports = function (app) {
   // Load index page
-  app.get("/", function (req, res) {
+  app.get("/", function(req, res) {
+    db.Device.findAll({}).then(function(dbDevices) {
+      res.render("index", {
+        msg: "Home Security Devices",
+        devices: dbDevices
+      });
+    });
+  });
+
+  // Load device page and pass in a device by id
+  app.get("/dashboard/:id", function(req, res) {
+    db.Device.findOne({ where: { id: req.params.id } }).then(function(dbDevice) {
+      res.render("device", {
+        device: dbDevice
+      });
+    });
+  });
+
+  // Load device page and pass in a device by id
+  app.get("/device/:id", function(req, res) {
+    db.Device.findOne({ where: { id: req.params.id } }).then(function(dbDevice) {
+      res.render("device", {
+        device: dbDevice
+      });
+    });
+  });
+
+  // Load user page and pass in a user by id
+  app.get("/user/:id", function(req, res) {
+    db.User.findOne({ where: { id: req.params.id } }).then(function(dbUser) {
+      res.render("user", {
+        user: dbUser
+      });
+    });
+  });
+  
+  //Load help Page
+
+  app.get("/welcome", function(req, res) {
     res.render("welcome", {
-      msg: "Security Application",
+      msg: "Help",
     });
   });
 
   // Load register page
-  app.get("/register", function (req, res) {
+  app.get("/register", function(req, res) {
     res.render("register", {
       msg: "Register",
     });
   });
 
   // Load login page
-  app.get("/login", function (req, res) {
+  app.get("/login", function(req, res) {
     res.render("login", {
       msg: "Login",
     });
   });
 
   // Load user dashboard page
-  app.get("/dashboard", function (req, res) {
+  app.get("/dashboard", function(req, res) {
     res.render("dashboard", {
-      msg: "Security Dashboard",
+      msg: "Device Dashboard",
     });
   });
 
   // Load admin page
-  app.get("/admin", function (req, res) {
+  app.get("/admin", function(req, res) {
     res.render("admin", {
       msg: "Admin Dashboard",
     });
