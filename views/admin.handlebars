@@ -8,7 +8,7 @@
       <ul id="user-list" class="list-group">
         {{#each user}}
         <li data-id="{{this.id}}" class="list-group-item">
-          <a href="user/{{this.id}}">{{this.device}}</a>
+          <a href="user/{{this.id}}">{{this.name}}</a>
           <button class="btn btn-danger float-right delete">ｘ</button>
         </li>
         {{/each}}
@@ -38,7 +38,7 @@
         <div class="form-group">
           <label for="user-password">Password</label>
           <input 
-            type="text" 
+            type="password" 
             id="user-password" 
             class="form-control" 
             placeholder="Enter User Password">
@@ -46,7 +46,7 @@
         <div class="form-group">
           <label for="confirm-password">Confirm Password</label>
           <input 
-            type="text" 
+            type="password" 
             id="confirm-password" 
             class="form-control" 
             placeholder="Confirm Password">

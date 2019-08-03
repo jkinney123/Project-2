@@ -1,11 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
   var Device = sequelize.define("Device", {
     name: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false
     },
     description: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false
     },
     status: {
