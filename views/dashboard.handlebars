@@ -6,24 +6,24 @@
     <div class="col-md-6">      
       <button type="button" class="btn btn-primary btn-lg btn-block">Add a device!</button>
       <br>
-      <form class="clearfix mb-4">
+      <form class="clearfix mb-4" action="POST">
         <div class="form-group">
           <label for="device-text">Device Name</label>
-          <input type="text" id="device-name" class="form-control" aria-describedby="device-name" placeholder="Enter Device Name">
+          <input type="text" id="device-text" class="form-control" placeholder="Enter Device Name">
         </div>
         <div class="form-group">
           <label for="device-description">Device Description</label>
-          <textarea class="form-control" id="device-description" aria-describedby="device-description" placeholder="Enter Device Description"></textarea>
+          <textarea class="form-control" id="device-description" placeholder="Enter Device Description"></textarea>
         </div>
         <button id="deviceSubmit" class="btn btn-primary float-left">Submit</button>
       </form>
     </div>
     <div class="col-md-6">
-      <div id="show-devices" class="btn btn-primary btn-lg btn-block"> Device List </div>
+      <button id="show-devices" class="btn btn-primary btn-lg btn-block"> Device List </button>
       <ul id="device-list" class="list-group">
-        {{#each devices}}
+        {{#each device}}
         <li data-id="{{this.id}}" class="list-group-item">
-          <a href="device/{{this.id}}">{{this.name}}</a>
+          <a href="device/{{this.id}}">{{this.user}}</a>
           <button class="btn btn-danger float-right delete">ｘ</button>
         </li>
         {{/each}}
@@ -31,3 +31,5 @@
     </div>
   </div>
 </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/device.js"></script>

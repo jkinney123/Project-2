@@ -60,6 +60,30 @@ module.exports = function(app) {
     });
   });
 
+  app.post('/login', async function(req, res, next) {
+    const { name, password } = req.body;
+    if (name && password) {
+      let user = await getUser({ name: name });
+      if (!user) {
+        res.status(401).json({ message: 'No such user found' });
+      }
+      if (user.password === password) {
+        // from now on we'll identify the user by the id and the id is the 
+        // only personalized value that goes into our token
+        let payload = { id: user.id };
+        let token = jwt.sign(payload, jwtOptions.secretOrKey);
+        res.json({ msg: 'ok', token: token });
+        res.render("dashboard", {
+        });
+
+      } else {
+        res.status(401).json({ msg: 'Password is incorrect' });
+        res.render("register", {
+        });
+      }
+    }
+  });
+
   // Load user dashboard page
   app.get("/dashboard", function(req, res) {
     res.render("dashboard", {

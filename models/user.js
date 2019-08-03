@@ -8,16 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    status: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      defaultValue: "Active"
-    },
     password: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    password2: {
       type: DataTypes.STRING,
       allowNull: false
     }

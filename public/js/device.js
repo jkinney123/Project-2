@@ -32,7 +32,7 @@ var showDevices = function () {
   deviceAPI.getDevice().then(function (data) {
     var $devices = data.map(function (device) {
       var $a = $("<a>")
-        .text(device.device)
+        .text(device.name)
         .attr("href", "/device/" + device.id);
 
       var $li = $("<li>")
@@ -61,11 +61,11 @@ var addDevice = function (event) {
   event.preventDefault();
 
   var device = {
-    device: $("#device-text").val().trim(),
-    status: $("#device-description").val().trim()
+    name: $("#device-text").val().trim(),
+    description: $("#device-description").val().trim()
   };
 
-  if (!(device.device && device.status)) {
+  if (!(device.name && device.description)) {
     alert("You must enter an example text and description!");
     return;
   }
