@@ -1,14 +1,13 @@
 // The User API object contains methods for each kind of request we'll make
 var userAPI = {
-
-  getUser: function () {
+  getUser: function() {
     return $.ajax({
       url: "api/users",
       type: "GET"
     });
   },
 
-  saveUser: function (user) {
+  saveUser: function(user) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -19,18 +18,18 @@ var userAPI = {
     });
   },
 
-  removeUser: function (id) {
+  removeUser: function(id) {
     return $.ajax({
       url: "api/users/" + id,
       type: "DELETE"
     });
   }
-}
+};
 
-// showUsers gets new devices from the db and repopulates the list
-var showUsers = function () {
-  userAPI.getUser().then(function (data) {
-    var $users = data.map(function (user) {
+// showUsers gets new users from the db and repopulates the list
+var showUsers = function() {
+  userAPI.getUser().then(function(data) {
+    var $users = data.map(function(user) {
       var $a = $("<a>")
         .text(user.name)
         .attr("href", "/user/" + user.id);
@@ -57,23 +56,34 @@ var showUsers = function () {
 };
 
 // addUser is called whenever we submit a new device
-var addUser = function (event) {
+var addUser = function(event) {
   event.preventDefault();
 
-  if ($("#user-password").val().trim() !== $("#confirm-password").val().trim()) {
-    alert("Passwords should match!")
+  if (
+    $("#user-password")
+      .val()
+      .trim() !==
+    $("#confirm-password")
+      .val()
+      .trim()
+  ) {
+    alert("Passwords should match!");
     return;
   }
 
-
   var user = {
-    name: $("#user-name").val().trim(),
-    email: $("#user-email").val().trim(),
-    password: $("#user-password").val().trim(),
+    name: $("#user-name")
+      .val()
+      .trim(),
+    email: $("#user-email")
+      .val()
+      .trim(),
+    password: $("#user-password")
+      .val()
+      .trim()
   };
 
-
-  userAPI.saveUser(user).then(function () {
+  userAPI.saveUser(user).then(function() {
     showUsers();
   });
 
@@ -84,13 +94,12 @@ var addUser = function (event) {
 };
 
 // deleteUser is called when an example's delete button is clicked
-var deleteUser = function () {
-
+var deleteUser = function() {
   var userID = $(this)
     .parent()
     .attr("data-id");
 
-  userAPI.removeUser(userID).then(function () {
+  userAPI.removeUser(userID).then(function() {
     showUsers();
   });
 };

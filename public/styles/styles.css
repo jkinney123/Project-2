@@ -1,14 +1,8 @@
-h1 {
-  color: red;
-  font-size: 55px;
+#str {
+  color: black;
+  font-size: 75px;
   text-align: center;
 }
-
-/* html,
-body {
-  height: 100%;
-  background-image: url("../img/background.jpg");
-} */
 
 .list-group-item {
   line-height: 2.5;
@@ -16,4 +10,18 @@ body {
 
 #home {
   color: whitesmoke;
+}
+
+.contents-r1-c1 {  
+  margin-left:-400px;
+  height: 800px;
+  margin-top: -5px;
+  padding: 5px;
+}
+
+.contents-r1-c2 {  
+  margin-left:220px;
+  height: 800px;
+  margin-top: -5px;
+  padding: 5px;
 }
